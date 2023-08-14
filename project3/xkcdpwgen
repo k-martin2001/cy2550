@@ -14,7 +14,7 @@ parser.add_argument('-c', "--caps", default=0, help='capitalize the first letter
 parser.add_argument('-n', "--numbers", default=0, help='insert NUMBERS random numbers in the password')
 parser.add_argument('-s', "--symbols", default=0, help='insert SYMBOLS random symbols in the password')
 
-args, unknown = parser.parse_known_args()
+args = parser.parse_args()
 
 #import list of words
 list_words = open("words.txt").read().splitlines()
