@@ -1,9 +1,4 @@
-
-#kelsey martin
-#project 3: password generator
-
 #!/usr/bin/env python
-
 import argparse
 import random
 
@@ -13,7 +8,6 @@ parser.add_argument('-w', "--words", default=4, help='include WORDS words in the
 parser.add_argument('-c', "--caps", default=0, help='capitalize the first letter of CAPS random words')
 parser.add_argument('-n', "--numbers", default=0, help='insert NUMBERS random numbers in the password')
 parser.add_argument('-s', "--symbols", default=0, help='insert SYMBOLS random symbols in the password')
-
 args = parser.parse_args()
 
 #import list of words
@@ -29,7 +23,7 @@ for i in range(args.words): def_words.append(random.choice(list_words))
 #capitalizes words in pw
 capitalize = random.sample(def_words, k=args.caps)
 for word in def_words:
-    pw += word.capitalize() if word in capitalize else word
+    pw += word.capitalize()
 
 #adds numbers to pw
 for i in range(args.numbers):
@@ -42,6 +36,3 @@ for i in range(args.symbols):
     pw = pw[:random_id] + random.choice("~!@#$%^&*.:;") + pw[random_id:]
 
 print(pw)
-# -
-
-
